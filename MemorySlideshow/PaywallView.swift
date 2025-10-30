@@ -12,6 +12,8 @@ struct PaywallView: View {
     @EnvironmentObject var storeManager: StoreManager
     @Environment(\.dismiss) var dismiss
     @State private var showProductLoadError = false
+    @State private var showPurchaseError = false
+    @State private var purchaseErrorMessage = ""
 
     var body: some View {
         ZStack {
@@ -92,6 +94,8 @@ struct PaywallView: View {
                                     }
                                 } catch {
                                     print("❌ Purchase error: \(error)")
+                                    purchaseErrorMessage = "Unable to complete purchase. Please try again or contact support if the problem persists."
+                                    showPurchaseError = true
                                 }
                             }
                         }) {
@@ -204,6 +208,11 @@ struct PaywallView: View {
                 }
                 .padding(.horizontal, 0)
             }
+        }
+        .alert("Purchase Error", isPresented: $showPurchaseError) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(purchaseErrorMessage)
         }
     }
 }
