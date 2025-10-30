@@ -172,21 +172,21 @@ struct PaywallView: View {
                     // Privacy, Terms, and Support links
                     VStack(spacing: 8) {
                         HStack(spacing: 12) {
-                            Link("Privacy Policy", destination: URL(string: "https://okekedev.github.io/slidecast-support/privacy.html")!)
+                            Link("Privacy Policy", destination: URL(string: "https://okekedev.github.io/slidecast/privacy.html")!)
                                 .font(.system(size: 12))
                                 .foregroundColor(.white.opacity(0.6))
 
                             Text("•")
                                 .foregroundColor(.white.opacity(0.4))
 
-                            Link("Terms of Use", destination: URL(string: "https://okekedev.github.io/slidecast-support/terms.html")!)
+                            Link("Terms of Use", destination: URL(string: "https://okekedev.github.io/slidecast/terms.html")!)
                                 .font(.system(size: 12))
                                 .foregroundColor(.white.opacity(0.6))
 
                             Text("•")
                                 .foregroundColor(.white.opacity(0.4))
 
-                            Link("Support", destination: URL(string: "https://okekedev.github.io/slidecast-support/support.html")!)
+                            Link("Support", destination: URL(string: "https://okekedev.github.io/slidecast/support.html")!)
                                 .font(.system(size: 12))
                                 .foregroundColor(.white.opacity(0.6))
                         }
